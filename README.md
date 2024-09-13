@@ -5,7 +5,7 @@ The new examples have been tested on a custom board equipped with STM32F407VG mi
 
 __Set the PIN for the RST and i2c address!__
 ```c++
-#define RST_PIN 6 //This line in the code is to set the Reset pin of the MFRC522
+#define RST_PIN PA6 //This line in the code is to set the Reset pin of the MFRC522
 
 // 0x2D is the i2c address of the NFC Reader. Check your address with i2cscanner if it does not match.
 MFRC522 mfrc522(0x2D, RST_PIN);   // Create MFRC522 instance.
