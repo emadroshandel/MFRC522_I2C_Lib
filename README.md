@@ -1,4 +1,4 @@
-# MFRC522 I2C library written based on the main Arduino library in https://www.arduino.cc/reference/en/libraries/mfrc522_i2c/
+# MFRC522 I2C library written based on the main Arduino library in [MFRCC522_i2c](https://www.arduino.cc/reference/en/libraries/mfrc522_i2c/)
 ### This repository provides examples of NFC reading and writing via an I2C bus connected to an STM32 microcontroller.
 
 The new examples have been tested on a custom board equipped with STM32F407VG microcontroller. 
