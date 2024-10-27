@@ -39,7 +39,7 @@ MFRC522::MFRC522(	byte chipAddress,
 void MFRC522::PCD_WriteRegister(	byte reg,		///< The register to write to. One of the PCD_Register enums.
 									byte value		///< The value to write.
 								) {
-	_TwoWireInstance->beginTransmission(_chipAddress);
+	_TwoWireInstance->beginTransmission((uint8_t)_chipAddress);
 	_TwoWireInstance->write(reg);
 	_TwoWireInstance->write(value);
 	_TwoWireInstance->endTransmission();
@@ -57,7 +57,7 @@ void MFRC522::PCD_WriteRegister(	byte reg,		///< The register to write to. One o
 		return;
 	}
 	uint8_t regist = (uint8_t) reg;
-	_TwoWireInstance->beginTransmission(_chipAddress);
+	_TwoWireInstance->beginTransmission((uint8_t)_chipAddress);
 	_TwoWireInstance->write(regist);
 	for (byte index = 0; index < count; index++) {
 		_TwoWireInstance->write(values[index]);
@@ -76,7 +76,7 @@ byte MFRC522::PCD_ReadRegister(	byte reg	///< The register to read from. One of 
 	uint8_t regist;
 	regist = (uint8_t) reg;
 	//digitalWrite(_chipSelectPin, LOW);			// Select slave
-	_TwoWireInstance->beginTransmission(_chipAddress);
+	_TwoWireInstance->beginTransmission((uint8_t)_chipAddress);
 	_TwoWireInstance->write(regist);
 	_TwoWireInstance->endTransmission();
 
@@ -100,7 +100,7 @@ void MFRC522::PCD_ReadRegister(	byte reg,		///< The register to read from. One o
 	uint8_t _count = (uint8_t) count;
 	uint8_t regist = (uint8_t) reg;
 	byte index = 0;							// Index in values array.
-	_TwoWireInstance->beginTransmission(_chipAddress);
+	_TwoWireInstance->beginTransmission((uint8_t)_chipAddress);
 	_TwoWireInstance->write(regist);
 	_TwoWireInstance->endTransmission();
 	_TwoWireInstance->requestFrom(_chipAddress, _count);
